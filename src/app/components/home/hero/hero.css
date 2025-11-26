@@ -1,0 +1,6 @@
+.hero {
+    background: url('/images/home/herobg.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 0 150px;
+}

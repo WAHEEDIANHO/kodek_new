@@ -1,0 +1,26 @@
+<div class="">
+
+    @if (isBrowser()) {
+        <ngx-typed-js [loop]="true" [strings]="['Ideas', 'Dreams', 'Plans']" [shuffle]="true" [typeSpeed]="150">
+    <h2 class="text-3xl md:text-4xl font-light text-gray-800">
+        Transforming <span class="text-[#066030] typing">Idea</span> into
+    </h2>
+  </ngx-typed-js>
+    } @else {
+      <h2 class="text-3xl md:text-4xl font-light text-gray-800">
+        Transforming <span class="text-[#066030]">Idea</span> into  
+      </h2>
+    }
+
+
+
+  <h1 class="text-5xl md:text-6xl font-bold text-black mt-3">
+    Digital Excellence
+  </h1>
+
+  <p class="mt-6 text-gray-600 leading-relaxed max-w-lg text-sm">
+    Whether you're a startup or an enterprise, we design and deliver scalable
+    technology that drive measurable results.
+  </p>
+
+</div>
