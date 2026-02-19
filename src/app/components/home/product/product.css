@@ -1,0 +1,19 @@
+.title-holder::before {
+    content: "";
+    width: 25%;
+    height: 5px;
+    background: linear-gradient(to right, #066030, #799B35, #ADDE4B) bottom no-repeat;
+    background-size: 100%;
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    border-radius: 5px;
+    /* transform: translate(-50%, -50%); */
+}
+
+.product-container {
+    background: url('/images/home/herobg.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 0 150px;
+}
