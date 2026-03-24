@@ -1,0 +1,172 @@
+<section class="w-full bg-[#F0F4FA] py-20 px-6 sm:px-12 lg:px-24">
+  <div class="max-w-3/4 mx-auto">
+    <!-- Header -->
+    <div class="text-center mb-12">
+      <h1 class="text-4xl md:text-5xl font-bold text-black mb-4 tracking-tight">
+        Got a project? Let's talk
+      </h1>
+      <p class="text-lg md:text-xl font-bold  mx-auto leading-relaxed">
+        We offer technology solutions to streamline your operations and improve your overall
+        efficiency.
+      </p>
+    </div>
+
+    <!-- Form -->
+    <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" class="space-y-6" novalidate>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <!-- Name Field -->
+        <div class="relative">
+          <label for="name" class="sr-only">Name</label>
+          <input
+            id="name"
+            type="text"
+            formControlName="name"
+            placeholder="Name"
+            class="w-full bg-white rounded-lg px-5 py-3 text-gray-800 placeholder-gray-400 border border-transparent focus:border-green-600 focus:ring-0 focus:outline-none transition-colors shadow-sm"
+            [class.border-red-500]="
+              contactForm.get('name')?.invalid && contactForm.get('name')?.touched
+            "
+            aria-required="true"
+          />
+          <div
+            *ngIf="contactForm.get('name')?.invalid && contactForm.get('name')?.touched"
+            class="mt-1 text-red-500 text-sm pl-1"
+          >
+            <span *ngIf="contactForm.get('name')?.errors?.['required']">Name is required.</span>
+            <span *ngIf="contactForm.get('name')?.errors?.['minlength']"
+              >Name must be at least 2 characters.</span
+            >
+          </div>
+        </div>
+
+        <!-- Email Field -->
+        <div class="relative">
+          <label for="email" class="sr-only">Email</label>
+          <input
+            id="email"
+            type="email"
+            formControlName="email"
+            placeholder="Email"
+            class="w-full bg-white rounded-lg px-5 py-3 text-gray-800 placeholder-gray-400 border border-transparent focus:border-green-600 focus:ring-0 focus:outline-none transition-colors shadow-sm"
+            [class.border-red-500]="
+              contactForm.get('email')?.invalid && contactForm.get('email')?.touched
+            "
+            aria-required="true"
+          />
+          <div
+            *ngIf="contactForm.get('email')?.invalid && contactForm.get('email')?.touched"
+            class="mt-1 text-red-500 text-sm pl-1"
+          >
+            <span *ngIf="contactForm.get('email')?.errors?.['required']">Email is required.</span>
+            <span *ngIf="contactForm.get('email')?.errors?.['email']"
+              >Please enter a valid email address.</span
+            >
+          </div>
+        </div>
+
+        <!-- Contact Number Field -->
+        <div class="relative">
+          <label for="phone" class="sr-only">Contact Number</label>
+          <input
+            id="phone"
+            type="tel"
+            formControlName="phone"
+            placeholder="Contact Number"
+            class="w-full bg-white rounded-lg px-5 py-3 text-gray-800 placeholder-gray-400 border border-transparent focus:border-green-600 focus:ring-0 focus:outline-none transition-colors shadow-sm"
+            [class.border-red-500]="
+              contactForm.get('phone')?.invalid && contactForm.get('phone')?.touched
+            "
+          />
+          <div
+            *ngIf="contactForm.get('phone')?.invalid && contactForm.get('phone')?.touched"
+            class="mt-1 text-red-500 text-sm pl-1"
+          >
+            <span *ngIf="contactForm.get('phone')?.errors?.['pattern']"
+              >Please enter a valid phone number.</span
+            >
+          </div>
+        </div>
+
+        <!-- Business Name Field -->
+        <div class="relative">
+          <label for="businessName" class="sr-only">Business Name</label>
+          <input
+            id="businessName"
+            type="text"
+            formControlName="businessName"
+            placeholder="Business Name"
+            class="w-full bg-white rounded-lg px-5 py-3 text-gray-800 placeholder-gray-400 border border-transparent focus:border-green-600 focus:ring-0 focus:outline-none transition-colors shadow-sm"
+          />
+        </div>
+      </div>
+
+      <!-- Message Field -->
+      <div class="relative">
+        <label for="message" class="sr-only">Message</label>
+        <textarea
+          id="message"
+          formControlName="message"
+          placeholder="Message"
+          rows="4"
+          class="w-full bg-white rounded-lg px-5 py-3 text-gray-800 placeholder-gray-400 border border-transparent focus:border-green-600 focus:ring-0 focus:outline-none transition-colors shadow-sm resize-none"
+          [class.border-red-500]="
+            contactForm.get('message')?.invalid && contactForm.get('message')?.touched
+          "
+          aria-required="true"
+        ></textarea>
+        <div
+          *ngIf="contactForm.get('message')?.invalid && contactForm.get('message')?.touched"
+          class="mt-1 text-red-500 text-sm pl-1"
+        >
+          <span *ngIf="contactForm.get('message')?.errors?.['required']">Message is required.</span>
+          <span *ngIf="contactForm.get('message')?.errors?.['minlength']"
+            >Message must be at least 10 characters.</span
+          >
+        </div>
+      </div>
+
+      <!-- Submit Button -->
+      <div class="pt-4">
+        <button
+          type="submit"
+          [disabled]="isSubmitting()"
+          class="w-full relative group overflow-hidden rounded-full bg-[#0B5C34] text-white text-lg py-3 transition-all duration-300 hover:bg-[#094a2a] focus:outline-none focus:ring-2 focus:ring-[#0B5C34] focus:ring-offset-2 disabled:opacity-70 disabled:cursor-not-allowed active:translate-y-[4px]"
+        >
+          <span class="relative z-10 flex items-center justify-center gap-2">
+            <span *ngIf="!isSubmitting()">Submit</span>
+            <span *ngIf="isSubmitting()">Sending...</span>
+            <svg
+              *ngIf="isSubmitting()"
+              class="animate-spin h-5 w-5 text-white"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+            >
+              <circle
+                class="opacity-25"
+                cx="12"
+                cy="12"
+                r="10"
+                stroke="currentColor"
+                stroke-width="4"
+              ></circle>
+              <path
+                class="opacity-75"
+                fill="currentColor"
+                d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+              ></path>
+            </svg>
+          </span>
+        </button>
+      </div>
+
+      <!-- Feedback Messages -->
+      <div *ngIf="submitSuccess()" class="mt-4 p-4 bg-green-100 text-green-800 rounded-lg text-center" role="alert">
+        Thank you! Your message has been sent successfully.
+      </div>
+      <div *ngIf="submitError()" class="mt-4 p-4 bg-red-100 text-red-800 rounded-lg text-center" role="alert">
+        Something went wrong. Please try again later.
+      </div>
+    </form>
+  </div>
+</section>

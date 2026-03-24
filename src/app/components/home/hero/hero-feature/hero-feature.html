@@ -1,13 +1,20 @@
-<div class="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto px-6">
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 lg:gap-8 max-w-7xl mx-auto">
 
-    @for (f of features; track $index) {
-    <div class="bg-white shadow-lg rounded-xl  text-center border border-gray-100 feature_card" >
-    <div class="flex">
-      <span class="w-5 h-5 bg-green-500 rounded-full border-4 border-white shadow outline outline-green-500 m-3"></span>
+  @for (f of features; track $index) {
+    <div class="group bg-white/90 backdrop-blur-sm shadow-md hover:shadow-xl rounded-2xl p-6 border border-gray-100/50 transition-all duration-300 hover:-translate-y-1 flex flex-col items-center lg:items-start text-center lg:text-left h-full">
+      
+      <div class="mb-4 flex items-center justify-center lg:justify-start w-full">
+        <span class="w-4 h-4 bg-green-500 rounded-full border-2 border-white shadow-sm outline outline-1 outline-green-500/50 group-hover:scale-125 transition-transform duration-300" aria-hidden="true"></span>
+      </div>
+
+      <h3 class="text-gray-900 font-bold text-lg md:text-xl lg:text-2xl leading-tight">
+        {{ f.title }}
+      </h3>
+      
+      <!-- Placeholder for description if added in future, ensuring layout stability -->
+      <div class="mt-2 w-12 h-1 bg-green-500/20 rounded-full group-hover:w-24 transition-all duration-500"></div>
+
     </div>
-    <p class="text-gray-800 font-medium text-2xl px-6 text-center">
-      {{ f.title }}
-    </p>
-  </div>
-    }
+  }
+
 </div>

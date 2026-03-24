@@ -1,0 +1,136 @@
+@import "tailwindcss";
+
+
+nav {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.offer-toggle-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.75rem;
+  height: 1.75rem;
+  border-radius: 9999px;
+  /* background: radial-gradient(circle at 30% 30%, #9af260, #3a8b1a); */
+  color: #ffffff;
+  box-shadow: 0 0 16px rgba(106, 232, 109, 0.6);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+.offer-toggle-icon-open {
+  transform: rotate(180deg);
+  box-shadow: 0 0 22px rgba(106, 232, 109, 0.8);
+}
+
+.offer-toggle-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.125rem;
+  border-radius: 9999px;
+  background: radial-gradient(circle at 30% 30%, #9af260, #3a8b1a);
+  box-shadow: 0 0 18px rgba(106, 232, 109, 0.8);
+}
+
+.offer-toggle-pill-inner {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.75rem;
+  height: 1.75rem;
+  border-radius: 9999px;
+  background: #3f9440;
+}
+
+.offer-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  text-align: left;
+  padding: 0.75rem 1.5rem 0.75rem 0.75rem;
+  background-color: transparent;
+  transition: background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+  @apply p-10 rounded-2xl cursor-pointer;
+}
+
+.offer-card:focus-visible {
+  outline: 2px solid #16a34a;
+  outline-offset: 3px;
+}
+
+.offer-card:hover {
+  @apply border border-green-600;
+  transform: translateY(-1px);
+  box-shadow: 0 10px 18px rgba(0, 0, 0, 0.06);
+}
+
+.offer-card-icon {
+  flex-shrink: 0;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 9999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 0.875rem;
+  color: #ffffff;
+}
+
+.offer-card-icon-blue {
+  /* background: radial-gradient(circle at 30% 30%, #91dcff, #0099da); */
+}
+
+.offer-card-icon-green {
+  background: radial-gradient(circle at 30% 30%, #c0ff8d, #03a048);
+}
+
+.offer-card-icon-lightgreen {
+  background: radial-gradient(circle at 30% 30%, #e3ffb2, #52b847);
+}
+
+.offer-card-icon-teal {
+  background: radial-gradient(circle at 30% 30%, #a1f0ff, #00a9a1);
+}
+
+.offer-card-icon-dark {
+  background: radial-gradient(circle at 30% 30%, #454545, #000000);
+}
+
+.offer-card-icon-label {
+  letter-spacing: 0.04em;
+}
+
+.offer-card-title {
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 0.25rem;
+}
+
+.offer-card-title-blue {
+  color: #008fd8;
+}
+
+.offer-card-title-green {
+  color: #008c3a;
+}
+
+.offer-card-title-lightgreen {
+  color: #22a43d;
+}
+
+.offer-card-title-teal {
+  color: #008f80;
+}
+
+.offer-card-title-dark {
+  color: #047857;
+}
+
+.offer-card-body {
+  font-size: 0.85rem;
+  line-height: 1.45;
+  color: #4b4b4b;
+  max-width: 18rem;
+}

@@ -1,7 +1,13 @@
-<div class="flex justify-center lg:justify-end pt-28">
+<div class="relative w-full max-w-lg md:max-w-xl lg:max-w-2xl mx-auto lg:mx-0 aspect-square lg:aspect-auto flex items-center justify-center">
+  <!-- Optimized SVG for responsiveness -->
   <img
     src="/images/home/lapman.svg"
-    alt="Digital Excellence"
-    class="w-[85%] lg:w-[90%] object-contain"
+    alt="Illustration of a person working on a laptop representing digital excellence"
+    class="w-full h-auto max-h-[40vh] md:max-h-[50vh] lg:max-h-full object-contain transform-gpu hover:scale-[1.02] transition-transform duration-500 ease-out"
+    fetchpriority="high"
+    loading="eager"
   />
+  
+  <!-- Subtle background glow for visual depth -->
+  <div class="absolute inset-0 bg-green-100/30 blur-3xl -z-10 rounded-full scale-75 opacity-0 md:opacity-100" aria-hidden="true"></div>
 </div>

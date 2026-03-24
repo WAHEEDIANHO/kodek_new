@@ -5,18 +5,15 @@
         </span>
     </div>
 
-    <div class="flex border w-full h-scre">
-        <div class="border h-[10em] w-[10em]">
-            <img  src="/images/home/clients/image_1.svg" alt="Client 1" class="w-full h-full object-contain" />
+    <!-- <div class="wrapper relative w-full h-[10em] mx-auto overflow-hidden">
+        <div class="boxes h-full w-[calc(100%+20em)] justify-center relative border border-red-800 left-[-10em] right-[-10em]">
+            @for (item of items; track $index) {
+                <div class="box h-[10em] md:w-[10em] absolute">
+                    <img  src="{{item.image}}" alt="{{item.alt}}" class="w-full h-full object-contain" />
+                </div>
+            }         
         </div>
-                <div class="border h-[10em] w-[10em]">
-            <img  src="/images/home/clients/image_2.svg" alt="Client 1" class="w-full h-full object-contain" />
-        </div>
-                <div class="border h-[10em] w-[10em]">
-            <img  src="/images/home/clients/image_3.svg" alt="Client 1" class="w-full h-full object-contain" />
-        </div>
-                <div class="border h-[10em] w-[10em]">
-            <img  src="/images/home/clients/image_5.svg" alt="Client 1" class="w-full h-full object-contain" />
-        </div>
-    </div>
+    </div> -->
+
+    <app-client-carousel [items]="items" />
 </section>

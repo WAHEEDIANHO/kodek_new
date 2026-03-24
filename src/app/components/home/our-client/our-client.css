@@ -1,0 +1,10 @@
+:host ::ng-deep .slick-track {
+  display: flex;
+  align-items: center;
+}
+
+:host ::ng-deep .slick-slide {
+  float: none;
+  height: 10em;
+  width: 10em;
+}

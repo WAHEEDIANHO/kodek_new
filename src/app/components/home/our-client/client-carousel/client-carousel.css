@@ -1,0 +1,12 @@
+ /* :host ::ng-deep .slick-track {
+  display: flex;
+  align-items: center;
+}
+
+:host ::ng-deep .slick-slide {
+  float: none;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+} */

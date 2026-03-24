@@ -1,6 +1,14 @@
-.hero {
+.hero-bg-overlay {
     background: url('/images/home/herobg.svg');
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: 0 150px;
+    background-position: center;
+    opacity: 0.15;
+}
+
+@media (min-width: 1024px) {
+    .hero-bg-overlay {
+        background-position: 0 150px;
+        opacity: 1;
+    }
 }

@@ -1,0 +1,22 @@
+@if (isBrowser) {
+  <ngx-slick-carousel
+    #slickModal="slick-carousel"
+    [config]="slideConfig"
+    class="w-full"
+  >
+    @for (item of items(); track $index) {
+      <div ngxSlickItem class="slide h-[10em] w-[10em] shrink-0">
+        <img src="{{ item.image }}" alt="{{ item.alt }}" class="w-full h-full object-contain" />
+      </div>
+    }
+  </ngx-slick-carousel>
+} @else {
+  <!-- Static Grid for SSR/SEO -->
+  <div class="flex justify-between items-center w-full overflow-hidden">
+    @for (item of items(); track $index) {
+      <div class="slide h-[10em] w-[10em] shrink-0">
+        <img src="{{ item.image }}" alt="{{ item.alt }}" class="h-full object-contain" />
+      </div>
+    }
+  </div>
+}

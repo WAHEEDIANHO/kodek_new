@@ -1,26 +1,33 @@
-<div class="">
+<div class="flex flex-col gap-4 md:gap-6 max-w-2xl mx-auto lg:mx-0">
 
-    @if (isBrowser()) {
-        <ngx-typed-js [loop]="true" [strings]="['Ideas', 'Dreams', 'Plans']" [shuffle]="true" [typeSpeed]="150">
-    <h2 class="text-3xl md:text-4xl font-light text-gray-800">
-        Transforming <span class="text-[#066030] typing">Idea</span> into
-    </h2>
-  </ngx-typed-js>
-    } @else {
-      <h2 class="text-3xl md:text-4xl font-light text-gray-800">
-        Transforming <span class="text-[#066030]">Idea</span> into  
+  @if (isBrowser()) {
+    <ngx-typed-js [loop]="true" [strings]="['Ideas', 'Dreams', 'Plans']" [shuffle]="true" [typeSpeed]="150">
+      <h2 class="text-fluid-h2 font-light text-gray-800">
+        Transforming <span class="text-[#066030] typing" aria-label="dynamic ideas">Idea</span> into
       </h2>
-    }
+    </ngx-typed-js>
+  } @else {
+    <h2 class="text-fluid-h2 font-light text-gray-800">
+      Transforming <span class="text-[#066030]">Idea</span> into  
+    </h2>
+  }
 
-
-
-  <h1 class="text-5xl md:text-6xl font-bold text-black mt-3">
+  <h1 class="text-fluid-h1 font-bold tracking-tight text-gray-900">
     Digital Excellence
   </h1>
 
-  <p class="mt-6 text-gray-600 leading-relaxed max-w-lg text-sm">
+  <p class="text-fluid-p text-gray-600 leading-relaxed max-w-lg mx-auto lg:mx-0 font-bold">
     Whether you're a startup or an enterprise, we design and deliver scalable
-    technology that drive measurable results.
+    technology that drives measurable results.
   </p>
+
+  <div class="mt-4 flex flex-wrap gap-4 justify-center lg:justify-start">
+    <button class="touch-target px-8 py-3 bg-[#066030] text-white rounded-full font-bold hover:bg-opacity-90 transition-all shadow-lg hover:shadow-xl active:scale-95">
+      Get Started
+    </button>
+    <button class="touch-target px-8 py-3 border-2 border-[#066030] text-[#066030] rounded-full font-bold hover:bg-[#066030] hover:text-white transition-all active:scale-95">
+      Learn More
+    </button>
+  </div>
 
 </div>

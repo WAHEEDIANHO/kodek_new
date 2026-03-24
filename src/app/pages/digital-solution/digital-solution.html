@@ -1,0 +1,132 @@
+<div class="bg-white">
+  <!-- Header / Tabs -->
+  <div class="w-ful pt-24 pb-8 px-6 lg:px-12 top-0 z-40 shadow-sm">
+    <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+      
+      <!-- Title -->
+      <div class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-full bg-white flex items-center justify-center text-white">
+          <img src="/images/navbar/ds.svg" alt="" class="w-6 h-6 text-[#09542A]">
+        </div>
+        <h1 class="text-3xl font-bold text-[#00AB94]">Digital Solution</h1>
+      </div>
+
+      <!-- Tabs -->
+      <div class="relative flex items-center gap-8">
+
+
+        @for (tab of navigationTabs; track $index) {
+          <button 
+            (click)="setActiveTab(tab)"
+            class="text-lg font-medium pb-2 transition-colors duration-300 cursor-pointer hover:text-black"
+            [class.text-black]="activeTab() === tab"
+            [class.text-gray-400]="activeTab() !== tab"
+          >
+            {{ tab.title }}
+          </button>
+          
+        } 
+        <!-- <button 
+          (click)="setActiveTab('digital-learning')"
+          class="text-lg font-medium pb-2 transition-colors duration-300"
+          [class.text-black]="activeTab === 'digital-learning'"
+          [class.text-gray-400]="activeTab !== 'digital-learning'"
+        >
+          Digital Learning
+        </button> -->
+        
+        <!-- Active Indicator -->
+        <!-- <div class="absolute bottom-0 h-1 bg-lime-400 rounded-full w-1/2 transition-none" #tabIndicator></div> -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Content Area -->
+  <div class="w-full py-12 px-6 lg:px-12 bg-gray-50 relative">
+    <div #contentContainer class="max-w-6xl mx-auto relative z-3">
+      
+      <!-- Digital Learning Content -->
+      @if(activeTab().id === 'overview') {
+        <div class="flex flex-col md:flex-row items-center gap-12">
+          <div class="w-full md:w-1/2">
+              <h2 class="text-4xl text-black mb-6">Transforming your digital presence</h2>
+              <p class="text-gray-600 text-lg leading-relaxed mb-8">
+                Your users deserve experiences that are intuitive, fast, and secure — and that’s what we deliver. 
+                We combine technical expertise, user-centric design, and innovation to build solutions that connect and convert.
+              </p>
+
+              <p class="text-gray-600 text-lg leading-relaxed mb-8">
+                From <span class="font-bold">mobile and web apps to AI & enterprise solutions,</span> including <span class="font-bold">CRM and CMS platforms,</span>
+                we create digital products that perform, run smoothly across devices, and deliver measurable results for your business.
+              </p>
+          </div>
+          <div class="w-full md:w-1/2 h-80 bg-gray-200 rounded-2xl flex items-center justify-center">
+              <span class="text-gray-400">Digital Learning Illustration</span>
+          </div>
+        </div>
+      }
+
+      @else if (activeTab().id === 'web-design-build') {
+        <div class="flex flex-col items-center text-center justify-center gap-12">
+
+          <h2 class="text-5xl text-black font-bold">Web development that stands apart</h2>
+
+          <div class="w-full max-w-4xl">
+              <p class="text-gray-600 text-lg leading-relaxed mb-8">
+                We build everything from simple websites and online stores to custom web applications designed to stand out. 
+                Our team handles frontend, backend, and full-stack development, delivering projects from initial concept to final launch for businesses across industries.
+              </p>
+          </div>
+
+          <div class="w-full h-80 bg-gray-200 rounded-2xl flex items-center justify-center">
+              <span class="text-gray-400">Digital Learning Illustration</span>
+          </div>
+      
+        </div>
+      }
+
+      @else if (activeTab().id === 'ai-innovation') {
+        <div class="flex flex-col items-center text-center justify-center gap-12">
+
+          <h2 class="text-5xl text-black font-bold">AI & Innovation Services</h2>
+
+          <div class="w-full h-80 bg-gray-200 rounded-2xl flex items-center justify-center">
+            <span class="text-gray-400">Digital Learning Illustration</span>
+          </div>
+
+          <div class="w-full max-w-4xl">
+              <p class="text-gray-600 text-lg leading-relaxed mb-8">
+                AI is one of the biggest transformation opportunities for modern businesses. We help you turn its potential into practical, measurable results.
+              </p>
+          </div>
+      
+        </div>
+      }
+
+      @else if(activeTab().id === 'crm-implementation') {
+        <div class="w-full items-center justify-center flex flex-col">
+          <h2 class="text-4xl text-black mb-6">Transform. Connect. Grow your business</h2>
+          <div class="w-full flex flex-col md:flex-row items-center gap-12">
+            <div class="md:w-1/2">
+              <p class="text-gray-600 text-lg leading-relaxed mb-8">
+                Gain visibility, control, and real-time insights across your operations, empowering smarter decisions and driving profitable growth.
+              </p>
+            </div>
+
+              <div class="w-full md:w-1/2 h-80 bg-gray-200 rounded-2xl flex items-center justify-center">
+                  <span class="text-gray-400">Digital Learning Illustration</span>
+              </div>
+          </div>
+
+        </div>
+      }
+    </div>
+
+    <div class="w-screen absolute start-0 bottom-0 z-1">
+      <img src="/images/home/herobg.svg" class="w-full h-100 object-cover">
+    </div>
+  </div>
+</div>
+
+<app-contact-form />
+<app-footer />
