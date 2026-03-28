@@ -1,4 +1,4 @@
-import { Component, signal } from '@angular/core';
+import { Component, Inject, signal } from '@angular/core';
 import { RouterLink } from '@angular/router';
 
 @Component({
@@ -10,6 +10,7 @@ import { RouterLink } from '@angular/router';
 export class Navbar {
   mobileOpen = signal(false);
   offerOpen = signal(false);
+
 
   toggleMobile() {
     this.mobileOpen.set(!this.mobileOpen());
@@ -91,5 +92,7 @@ export class Navbar {
       event.preventDefault();
       items[items.length - 1].focus();
     }
+
+
   }
 }

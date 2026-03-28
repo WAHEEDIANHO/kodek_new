@@ -78,12 +78,13 @@
 
             <div class="w-full bg-white rounded-3xl shadow-xl px-12 py-10">
               <div class="grid grid-cols-1 md:grid-cols-3 gap-x-12 gap-y-10">
-                <button
+                <a
                   type="button"
                   class="offer-card"
                   role="menuitem"
                   data-offer-menu-item
                   (keydown)="onOfferItemKeydown($event, 0)"
+                  routerLink="digital-solution"
                 >
                   <div class="offer-card-icon  border bg-[#D4EBF7]">
                     <img src="/images/navbar/ds.svg" alt="Digital Solution" class="object-cover">
@@ -97,14 +98,16 @@
                       high-performing digital products that deliver measurable results.
                     </p>
                   </div>
-                </button>
+                </a>
 
-                <button
+                <a
                   type="button"
                   class="offer-card"
                   role="menuitem"
                   data-offer-menu-item
                   (keydown)="onOfferItemKeydown($event, 1)"
+                  href="https://centrallms.com"
+                  target="_blank"
                 >
                   <div class="offer-card-icon border bg-[#EAF8E6]">
                     <img src="/images/navbar/cl.svg" alt="Central LMS" class="object-cover">
@@ -118,14 +121,16 @@
                       always-on access to curated learning resources.
                     </p>
                   </div>
-                </button>
+                </a>
 
-                <button
+                <a
                   type="button"
                   class="offer-card"
                   role="menuitem"
                   data-offer-menu-item
                   (keydown)="onOfferItemKeydown($event, 2)"
+                  href="https://learnocentric.com/"
+                  target="_blank"
                 >
                   <div class="offer-card-icon border bg-[#57DB924D]">
                     <img src="/images/navbar/learno.svg" alt="Learn - O&apos; Centric" class="object-cover">
@@ -139,14 +144,15 @@
                       school learning management platform.
                     </p>
                   </div>
-                </button>
+                </a>
 
-                <button
+                <a
                   type="button"
                   class="offer-card"
                   role="menuitem"
                   data-offer-menu-item
                   (keydown)="onOfferItemKeydown($event, 3)"
+                  routerLink="content-conversion"
                 >
                   <div class="offer-card-icon border bg-[#57DB924D] px-2">
                     <img src="/images/navbar/content.svg" alt="Content Conversion" class="object-cover">
@@ -160,14 +166,16 @@
                       learners and improve business performance.
                     </p>
                   </div>
-                </button>
+                </a>
 
-                <button
+                <a
                   type="button"
                   class="offer-card"
                   role="menuitem"
                   data-offer-menu-item
                   (keydown)="onOfferItemKeydown($event, 4)"
+                  href="https://myfiesta.ca/"
+                  target="_blank"
                 >
                   <div class="offer-card-icon border bg-[#000000] px-2">
                     <img src="/images/navbar/mf.svg" alt="Marketing &amp; Finance" class="object-cover">
@@ -181,7 +189,7 @@
                       targeted and sponsored campaigns.
                     </p>
                   </div>
-                </button>
+                </a>
               </div>
             </div>
           <!-- </div> -->
